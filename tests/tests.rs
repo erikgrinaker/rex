@@ -15,4 +15,8 @@ macro_rules! test_match {
 test_match! {
     with "foo";
     empty: "" => true,
+    partial: "o" => true,
+    exact: "foo" => true,
+    mismatch: "fox" => false,
+    mismatch_overlap: "foox" => false,
 }

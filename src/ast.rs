@@ -1,12 +1,11 @@
 pub enum Expression {
+    Alternation(Vec<Expression>), // (|)
     Anchor(Anchor),               // ^ or $
     Any,                          // .
-    Alternation(Vec<Expression>), // |
     Class(Class),                 // []
-    Empty,                        //
     Literal(char),                // x
     Quantifier(u8, Option<u8>),   // ? * + {}
-    Sequence(Vec<Expression>),    // ^.b?
+    Sequence(Vec<Expression>),
 }
 
 pub enum Anchor {

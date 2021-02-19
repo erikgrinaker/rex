@@ -1,7 +1,7 @@
 pub type Result<T> = std::result::Result<T, Error>;
 
 #[derive(Clone, Debug)]
-pub struct Error(String);
+pub struct Error(pub String);
 
 impl std::error::Error for Error {}
 
