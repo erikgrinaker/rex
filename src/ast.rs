@@ -1,11 +1,12 @@
-pub enum Pattern {
-    Anchor(Anchor),             // ^ or $
-    Any,                        // .
-    Alternation(Vec<Pattern>),  // |
-    Class(Class),               // []
-    Literal(String),            // abc
-    Quantifier(u8, Option<u8>), // ? * + {}
-    Sequence(Vec<Pattern>),     // ^.b?
+pub enum Expression {
+    Anchor(Anchor),               // ^ or $
+    Any,                          // .
+    Alternation(Vec<Expression>), // |
+    Class(Class),                 // []
+    Empty,                        //
+    Literal(char),                // x
+    Quantifier(u8, Option<u8>),   // ? * + {}
+    Sequence(Vec<Expression>),    // ^.b?
 }
 
 pub enum Anchor {
