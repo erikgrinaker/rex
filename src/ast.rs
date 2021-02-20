@@ -1,3 +1,4 @@
+#[derive(Clone, Debug)]
 pub enum Expression {
     Alternation(Vec<Expression>), // (|)
     Anchor(Anchor),               // ^ or $
@@ -8,11 +9,13 @@ pub enum Expression {
     Sequence(Vec<Expression>),
 }
 
+#[derive(Clone, Debug)]
 pub enum Anchor {
     Start,
     End,
 }
 
+#[derive(Clone, Debug)]
 pub enum Class {
     Alnum,
     Alpha,
